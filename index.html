@@ -21,6 +21,21 @@
             src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/GmarketSansBold.woff') format('woff');
             font-weight: 700;
         }
+        @font-face {
+            font-family: 'NanumSquareRound';
+            src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumSquareRound.woff') format('woff');
+            font-weight: 400;
+        }
+        @font-face {
+            font-family: 'NanumSquareRoundBold';
+            src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumSquareRoundB.woff') format('woff');
+            font-weight: 700;
+        }
+        @font-face {
+            font-family: 'Cafe24Ssurround';
+            src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/Cafe24Ssurround.woff') format('woff');
+            font-weight: 700;
+        }
 
         body {
             font-family: 'Pretendard', sans-serif;
@@ -33,6 +48,15 @@
         }
         .font-sub-headline {
             font-family: 'GmarketSans', 'Pretendard', sans-serif;
+        }
+        .font-rounded {
+            font-family: 'NanumSquareRound', 'Pretendard', sans-serif;
+        }
+        .font-rounded-bold {
+            font-family: 'NanumSquareRoundBold', 'Pretendard', sans-serif;
+        }
+        .font-ssurround {
+            font-family: 'Cafe24Ssurround', 'NanumSquareRoundBold', sans-serif;
         }
 
         /* 부드러운 트랜지션 효과 */
@@ -83,7 +107,7 @@
     <nav class="sticky top-0 z-50 bg-cream/90 backdrop-blur-md border-b border-cream-border transition-all">
         <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
             <a href="#hero" class="font-headline text-lg md:text-xl text-terracotta flex items-center gap-2">
-                <span class="p-1.5 bg-terracotta/10 rounded-lg">🌿</span> Ahhyun.Atelier
+                <span class="p-1.5 bg-terracotta/10 rounded-lg">🌿</span> Ahyun.Atelier
             </a>
             <div class="flex gap-6 md:gap-8 text-sm font-medium text-charcoal-light">
                 <a href="#about" class="hover:text-terracotta transition-colors">소개</a>
@@ -108,13 +132,13 @@
                     <span class="w-2 h-2 rounded-full bg-lavender animate-pulse"></span> 호기심 많은 예술가형 ISFP 개발 주니어
                 </div>
                 
-                <h1 class="text-4xl md:text-5xl lg:text-6xl font-headline text-charcoal leading-tight md:leading-tight">
+                <h1 class="text-2xl md:text-3xl lg:text-4xl font-ssurround text-charcoal leading-tight md:leading-tight">
                     한 학기에 동아리 <span class="text-terracotta underline decoration-wavy decoration-terracotta-light/50 underline-offset-8">4개!</span><br>
                     넘치는 호기심과 실행력의<br>
                     <span class="text-lavender-dark">이아현</span>입니다.
                 </h1>
                 
-                <p class="text-base md:text-lg text-charcoal-light leading-relaxed max-w-2xl font-light">
+                <p class="text-base md:text-lg text-charcoal-light leading-relaxed max-w-2xl font-rounded">
                     하고 싶은 건 몸으로 덤벼 정복하는 탐구자입니다. 문화인류학의 발굴 현장에서 얻은 인간에 대한 이해를 바탕으로, 이제는 키보드 위에서 데이터의 흐름과 사용자의 마음을 발굴하는 든든한 동료로 성장하고 있습니다.
                 </p>
 
