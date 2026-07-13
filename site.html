@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="ko" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이아현 | 호기심 가득한 아뜰리에 포트폴리오</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons (아이콘 라이브러리) -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <style>
+        @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css");
+        @font-face {
+            font-family: 'GmarketSans';
+            src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/GmarketSansMedium.woff') format('woff');
+            font-weight: 500;
+        }
+        @font-face {
+            font-family: 'GmarketSansBold';
+            src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/GmarketSansBold.woff') format('woff');
+            font-weight: 700;
+        }
+
+        body {
+            font-family: 'Pretendard', sans-serif;
+            background-color: #FAF6F0; /* 크림 베이지 */
+            color: #2D2D2D; /* 딥 차콜 */
+        }
+
+        .font-headline {
+            font-family: 'GmarketSansBold', 'Pretendard', sans-serif;
+        }
+        .font-sub-headline {
+            font-family: 'GmarketSans', 'Pretendard', sans-serif;
+        }
+
+        /* 부드러운 트랜지션 효과 */
+        .hover-lift {
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+        }
+        .hover-lift:hover {
+            transform: translateY(-6px);
+        }
+    </style>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        terracotta: {
+                            DEFAULT: '#D45B34',
+                            light: '#E07B5C',
+                            dark: '#B04724',
+                            transparent: 'rgba(212, 91, 52, 0.1)'
+                        },
+                        cream: {
+                            DEFAULT: '#FAF6F0',
+                            card: '#FFFFFF',
+                            border: '#EAE1D4'
+                        },
+                        lavender: {
+                            DEFAULT: '#9C8EB9',
+                            light: '#B5A8D5',
+                            dark: '#7A6D99',
+                            transparent: 'rgba(156, 142, 185, 0.1)'
+                        },
+                        charcoal: {
+                            DEFAULT: '#2D2D2D',
+                            light: '#4A4A4A',
+                            muted: '#7F7F7F'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="selection:bg-terracotta/20 selection:text-terracotta overflow-x-hidden">
+
+    <!-- 네비게이션 -->
+    <nav class="sticky top-0 z-50 bg-cream/90 backdrop-blur-md border-b border-cream-border transition-all">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#hero" class="font-headline text-lg md:text-xl text-terracotta flex items-center gap-2">
+                <span class="p-1.5 bg-terracotta/10 rounded-lg">🌿</span> Ahhyun.Atelier
+            </a>
+            <div class="flex gap-6 md:gap-8 text-sm font-medium text-charcoal-light">
+                <a href="#about" class="hover:text-terracotta transition-colors">소개</a>
+                <a href="#strengths" class="hover:text-terracotta transition-colors">매력 카드</a>
+                <a href="#synergy" class="hover:text-terracotta transition-colors">취미 x 협업</a>
+                <a href="#tech" class="hover:text-terracotta transition-colors">기술 스택</a>
+                <a href="#cta" class="hover:text-terracotta transition-colors">동료 제안</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 히어로 섹션 -->
+    <section id="hero" class="relative py-16 md:py-28 overflow-hidden">
+        <!-- 배경 장식 요소 -->
+        <div class="absolute -top-20 -left-20 w-80 h-80 rounded-full bg-terracotta-transparent blur-3xl opacity-60"></div>
+        <div class="absolute -bottom-10 right-0 w-96 h-96 rounded-full bg-lavender-transparent blur-3xl opacity-60"></div>
+        
+        <div class="max-w-5xl mx-auto px-6 grid grid-cols-1 md:grid-cols-12 gap-8 items-center relative z-10">
+            <!-- 텍스트 영역 (7/12) -->
+            <div class="md:col-span-8 text-left space-y-6">
+                <div class="inline-flex items-center gap-2 px-3 py-1.5 bg-lavender-transparent border border-lavender/30 rounded-full text-lavender-dark text-xs font-semibold tracking-wide">
+                    <span class="w-2 h-2 rounded-full bg-lavender animate-pulse"></span> 호기심 많은 예술가형 ISFP 개발 주니어
+                </div>
+                
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-headline text-charcoal leading-tight md:leading-tight">
+                    한 학기에 동아리 <span class="text-terracotta underline decoration-wavy decoration-terracotta-light/50 underline-offset-8">4개!</span><br>
+                    넘치는 호기심과 실행력의<br>
+                    <span class="text-lavender-dark">이아현</span>입니다.
+                </h1>
+                
+                <p class="text-base md:text-lg text-charcoal-light leading-relaxed max-w-2xl font-light">
+                    하고 싶은 건 몸으로 덤벼 정복하는 탐구자입니다. 문화인류학의 발굴 현장에서 얻은 인간에 대한 이해를 바탕으로, 이제는 키보드 위에서 데이터의 흐름과 사용자의 마음을 발굴하는 든든한 동료로 성장하고 있습니다.
+                </p>
+
+                <!-- CTA 버튼 그룹 -->
+                <div class="flex flex-wrap gap-4 pt-2">
+                    <a href="#cta" class="px-6 py-3.5 bg-terracotta text-white rounded-xl font-medium hover:bg-terracotta-dark shadow-lg shadow-terracotta-transparent transition-all flex items-center gap-2 hover-lift">
+                        <i data-lucide="coffee" class="w-5 h-5"></i> 커피챗 보드 남기기
+                    </a>
+                    <a href="#synergy" class="px-6 py-3.5 bg-cream-card text-charcoal border border-cream-border rounded-xl font-medium hover:bg-cream/40 transition-all flex items-center gap-2 hover-lift">
+                        <i data-lucide="sparkles" class="w-5 h-5"></i> 아현의 시너지 디코딩
+                    </a>
+                </div>
+            </div>
+
+            <!-- 비주얼 아바타 영역 (4/12) -->
+            <div class="md:col-span-4 flex justify-center">
+                <div class="relative w-64 h-64 md:w-72 md:h-72">
+                    <!-- 후면 기하학 프레임 -->
+                    <div class="absolute inset-0 rounded-3xl bg-gradient-to-tr from-terracotta-light to-lavender rotate-6 opacity-30 animate-pulse"></div>
+                    <!-- 프로필 아바타 박스 -->
+                    <div class="absolute inset-2 bg-cream-card border-2 border-cream-border rounded-3xl shadow-xl flex flex-col items-center justify-center p-6 text-center space-y-4">
+                        <div class="w-24 h-24 bg-terracotta/10 border border-terracotta-light/30 rounded-full flex items-center justify-center text-4xl shadow-inner">
+                            🌿
+                        </div>
+                        <div>
+                            <h3 class="font-headline text-lg text-charcoal">이아현</h3>
+                            <p class="text-xs text-charcoal-muted mt-1">2001년생 • ISFP</p>
+                        </div>
+                        <div class="flex gap-2">
+                            <span class="px-2.5 py-1 bg-cream border border-cream-border text-[11px] font-semibold text-charcoal-light rounded-md">#탐구자</span>
+                            <span class="px-2.5 py-1 bg-cream border border-cream-border text-[11px] font-semibold text-charcoal-light rounded-md">#식물집사</span>
+                            <span class="px-2.5 py-1 bg-cream border border-cream-border text-[11px] font-semibold text-charcoal-light rounded-md">#해산물러버</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 소개 및 스토리텔링 섹션 -->
+    <section id="about" class="py-20 bg-cream-card border-y border-cream-border relative">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="text-center space-y-3 mb-16">
+                <span class="text-xs tracking-wider uppercase font-bold text-terracotta">Storytelling Flow</span>
+                <h2 class="text-3xl font-headline text-charcoal">발굴 현장에서 키보드 앞으로!</h2>
+                <div class="w-12 h-1 bg-terracotta mx-auto rounded-full"></div>
+            </div>
+
+            <!-- 타임라인/여정 스토리 -->
+            <div class="relative border-l-2 border-cream-border ml-4 md:ml-12 space-y-12 pb-6">
+                <!-- 단계 1 -->
+                <div class="relative pl-8 md:pl-12">
+                    <!-- 아이콘/불릿 -->
+                    <div class="absolute -left-[17px] top-1.5 w-8 h-8 rounded-full bg-cream border-2 border-terracotta flex items-center justify-center shadow-sm">
+                        <i data-lucide="compass" class="w-4 h-4 text-terracotta"></i>
+                    </div>
+                    <div>
+                        <span class="text-xs font-semibold text-terracotta-light bg-terracotta/5 px-2.5 py-0.5 rounded-full">인류학의 과거</span>
+                        <h3 class="text-lg font-sub-headline text-charcoal mt-2">사람과 흔적을 발굴하던 시선</h3>
+                        <p class="text-sm md:text-base text-charcoal-light mt-2 leading-relaxed font-light">
+                            진짜 인문학, 문화인류학을 전공하며 손으로 직접 유적과 흔적을 찍먹(?)해 보는 아주 특별한 현장 탐구를 거쳤습니다. "사람들이 왜 이곳에 이런 집을 짓고 모여 살았을까?" 탐구하던 이 유년의 질문은, 사용자 행동을 끈질기게 분석하는 눈을 키워주었습니다.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 단계 2 -->
+                <div class="relative pl-8 md:pl-12">
+                    <div class="absolute -left-[17px] top-1.5 w-8 h-8 rounded-full bg-cream border-2 border-lavender flex items-center justify-center shadow-sm">
+                        <i data-lucide="binary" class="w-4 h-4 text-lavender-dark"></i>
+                    </div>
+                    <div>
+                        <span class="text-xs font-semibold text-lavender-dark bg-lavender/5 px-2.5 py-0.5 rounded-full">전환점</span>
+                        <h3 class="text-lg font-sub-headline text-charcoal mt-2">데이터 분석에서 IT 세상의 매력을 발견하다</h3>
+                        <p class="text-sm md:text-base text-charcoal-light mt-2 leading-relaxed font-light">
+                            우연히 접한 데이터 분석 부트캠프는 거대한 충격이었습니다. 사람들이 남긴 흔적(데이터)이 디지털 세상에서 어떻게 유기적인 코드로 표현되고 유의미한 가치로 변화하는지 깨달았습니다. 기술의 깊은 바다로 뛰어드는 첫걸음이었습니다.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 단계 3 -->
+                <div class="relative pl-8 md:pl-12">
+                    <div class="absolute -left-[17px] top-1.5 w-8 h-8 rounded-full bg-cream border-2 border-terracotta flex items-center justify-center shadow-sm">
+                        <i data-lucide="laptop" class="w-4 h-4 text-terracotta"></i>
+                    </div>
+                    <div>
+                        <span class="text-xs font-semibold text-terracotta-light bg-terracotta/5 px-2.5 py-0.5 rounded-full">현재의 목표</span>
+                        <h3 class="text-lg font-sub-headline text-charcoal mt-2">개발은 처음이지만, 끈기와 빠른 습득력으로 무장 완료</h3>
+                        <p class="text-sm md:text-base text-charcoal-light mt-2 leading-relaxed font-light">
+                            비전공자이기에 코드를 짤 때 남들보다 세 배 더 탐구합니다. 매일 만나는 에러들은 고고학 발굴지에서 파묻힌 토기를 조심스럽게 꺼내는 것처럼 설레고 즐겁습니다. 누구보다 진지하고 무서운 러닝 커브로 프로젝트를 무사히 완수해 낼 준비가 되어 있습니다!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 매력 역량 카드 섹션 -->
+    <section id="strengths" class="py-20">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center space-y-3 mb-16">
+                <span class="text-xs tracking-wider uppercase font-bold text-lavender-dark">Core Selling Points</span>
+                <h2 class="text-3xl font-headline text-charcoal">협업을 빛낼 아현의 3대 매력 포인트</h2>
+                <div class="w-12 h-1 bg-lavender-dark mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- 카드 1 -->
+                <div class="bg-cream-card rounded-2xl border border-cream-border p-8 hover-lift flex flex-col justify-between shadow-sm relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-24 h-24 bg-terracotta/5 rounded-bl-full"></div>
+                    <div class="space-y-4">
+                        <div class="w-12 h-12 rounded-xl bg-terracotta/10 flex items-center justify-center text-terracotta">
+                            <i data-lucide="zap" class="w-6 h-6"></i>
+                        </div>
+                        <span class="text-xs font-semibold text-terracotta bg-terracotta-transparent px-2.5 py-1 rounded-full inline-block">실행력 & 몰입도</span>
+                        <h3 class="text-xl font-sub-headline text-charcoal">압도적인 멀티태스킹 에너지</h3>
+                        <p class="text-sm text-charcoal-light leading-relaxed font-light">
+                            한 학기에 4개의 동아리를 병행하며 성공적으로 조율해 낸 이력이 있습니다. 무작정 일을 벌이는 게 아니라, 철저한 시간 분배와 지치지 않는 기민함으로 프로젝트를 완벽히 소화합니다.
+                        </p>
+                    </div>
+                    <div class="pt-6 border-t border-cream/50 mt-6 flex items-center gap-2 text-xs font-semibold text-charcoal-muted">
+                        <i data-lucide="check-circle" class="w-4 h-4 text-terracotta"></i> 훌륭한 주도성과 추진력
+                    </div>
+                </div>
+
+                <!-- 카드 2 -->
+                <div class="bg-cream-card rounded-2xl border border-cream-border p-8 hover-lift flex flex-col justify-between shadow-sm relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-24 h-24 bg-lavender/5 rounded-bl-full"></div>
+                    <div class="space-y-4">
+                        <div class="w-12 h-12 rounded-xl bg-lavender/10 flex items-center justify-center text-lavender-dark">
+                            <i data-lucide="users" class="w-6 h-6"></i>
+                        </div>
+                        <span class="text-xs font-semibold text-lavender-dark bg-lavender-transparent px-2.5 py-1 rounded-full inline-block">인류학 x IT</span>
+                        <h3 class="text-xl font-sub-headline text-charcoal">사람과 데이터를 잇는 시선</h3>
+                        <p class="text-sm text-charcoal-light leading-relaxed font-light">
+                            기술적 한계에만 매몰되지 않습니다. "사람들이 왜 이 기능을 쓸까?", "동료들은 어떤 방식으로 소통해야 편할까?"라는 인간 중심적 관점을 코드와 UI에 섬세하게 녹여냅니다.
+                        </p>
+                    </div>
+                    <div class="pt-6 border-t border-cream/50 mt-6 flex items-center gap-2 text-xs font-semibold text-charcoal-muted">
+                        <i data-lucide="check-circle" class="w-4 h-4 text-lavender-dark"></i> 공감과 사용자 분석 능력
+                    </div>
+                </div>
+
+                <!-- 카드 3 -->
+                <div class="bg-cream-card rounded-2xl border border-cream-border p-8 hover-lift flex flex-col justify-between shadow-sm relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-24 h-24 bg-terracotta/5 rounded-bl-full"></div>
+                    <div class="space-y-4">
+                        <div class="w-12 h-12 rounded-xl bg-terracotta/10 flex items-center justify-center text-terracotta">
+                            <i data-lucide="trending-up" class="w-6 h-6"></i>
+                        </div>
+                        <span class="text-xs font-semibold text-terracotta bg-terracotta-transparent px-2.5 py-1 rounded-full inline-block">성장 DNA</span>
+                        <h3 class="text-xl font-sub-headline text-charcoal">거침없는 도전에 기반한 학습력</h3>
+                        <p class="text-sm text-charcoal-light leading-relaxed font-light">
+                            다양한 예체능 취미(댄스, 클라이밍 등)를 빠르게 습득하듯, 새로운 기술 스택도 무서운 기세로 스펀지처럼 흡수합니다. 실패를 두려워하지 않는 건강하고 단단한 회복탄력성을 지녔습니다.
+                        </p>
+                    </div>
+                    <div class="pt-6 border-t border-cream/50 mt-6 flex items-center gap-2 text-xs font-semibold text-charcoal-muted">
+                        <i data-lucide="check-circle" class="w-4 h-4 text-terracotta"></i> 탁월한 회복탄력성과 회고 태도
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 취미 x 시너지 인터랙티브 디코더 섹션 -->
+    <section id="synergy" class="py-20 bg-[#FAF1E6] border-y border-cream-border relative">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="text-center space-y-3 mb-12">
+                <span class="text-xs tracking-wider uppercase font-bold text-terracotta">Interactive Decoder</span>
+                <h2 class="text-3xl font-headline text-charcoal">아현의 다채로운 라이프스타일 ➔ 팀 협업 치트키</h2>
+                <p class="text-sm text-charcoal-light max-w-2xl mx-auto font-light mt-2">
+                    취미 수집가로만 보셨나요? 제가 경험한 모든 활동들은 사실 **강력한 협업 무기**로 단단히 디코딩되어 있습니다. 각 카드를 탭하여 실제 시너지를 발굴해 보세요!
+                </p>
+            </div>
+
+            <!-- 데코더 인터랙티브 바디 -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch mt-8">
+                <!-- 왼편 버튼 리스트 (5/12) -->
+                <div class="lg:col-span-5 flex flex-col gap-3 justify-center">
+                    <!-- 버튼 1: 아카펠라 -->
+                    <button onclick="decodeSynergy('acappella', this)" class="synergy-btn active-synergy-btn w-full text-left p-4 rounded-xl border border-cream-border bg-cream-card flex items-center gap-4 hover-lift hover:bg-white transition-all">
+                        <span class="text-2xl p-2.5 bg-terracotta/10 rounded-xl text-terracotta flex items-center justify-center">🎵</span>
+                        <div>
+                            <h4 class="font-sub-headline text-sm text-charcoal">아카펠라 동아리</h4>
+                            <p class="text-xs text-charcoal-muted">서로의 주파수를 맞추는 목소리</p>
+                        </div>
+                    </button>
+                    <!-- 버튼 2: 밴드 -->
+                    <button onclick="decodeSynergy('band', this)" class="synergy-btn w-full text-left p-4 rounded-xl border border-transparent bg-cream-card/50 flex items-center gap-4 hover-lift hover:bg-white transition-all">
+                        <span class="text-2xl p-2.5 bg-lavender/10 rounded-xl text-lavender-dark flex items-center justify-center">🎸</span>
+                        <div>
+                            <h4 class="font-sub-headline text-sm text-charcoal">밴드 동아리</h4>
+                            <p class="text-xs text-charcoal-muted">조율과 완급조절의 정석</p>
+                        </div>
+                    </button>
+                    <!-- 버튼 3: 연극 -->
+                    <button onclick="decodeSynergy('theater', this)" class="synergy-btn w-full text-left p-4 rounded-xl border border-transparent bg-cream-card/50 flex items-center gap-4 hover-lift hover:bg-white transition-all">
+                        <span class="text-2xl p-2.5 bg-terracotta/10 rounded-xl text-terracotta flex items-center justify-center">🎭</span>
+                        <div>
+                            <h4 class="font-sub-headline text-sm text-charcoal">연극 동아리</h4>
+                            <p class="text-xs text-charcoal-muted">공감 기반의 깊은 배역 탐구</p>
+                        </div>
+                    </button>
+                    <!-- 버튼 4: 댄스 -->
+                    <button onclick="decodeSynergy('dance', this)" class="synergy-btn w-full text-left p-4 rounded-xl border border-transparent bg-cream-card/50 flex items-center gap-4 hover-lift hover:bg-white transition-all">
+                        <span class="text-2xl p-2.5 bg-lavender/10 rounded-xl text-lavender-dark flex items-center justify-center">💃</span>
+                        <div>
+                            <h4 class="font-sub-headline text-sm text-charcoal">댄스 & 클라이밍</h4>
+                            <p class="text-xs text-charcoal-muted">성취를 향한 건강한 몸의 규칙</p>
+                        </div>
+                    </button>
+                    <!-- 버튼 5: 식물 키우기 -->
+                    <button onclick="decodeSynergy('plants', this)" class="synergy-btn w-full text-left p-4 rounded-xl border border-transparent bg-cream-card/50 flex items-center gap-4 hover-lift hover:bg-white transition-all">
+                        <span class="text-2xl p-2.5 bg-terracotta/10 rounded-xl text-terracotta flex items-center justify-center">🌿</span>
+                        <div>
+                            <h4 class="font-sub-headline text-sm text-charcoal">식물 키우기 (홈가드닝)</h4>
+                            <p class="text-xs text-charcoal-muted">매일 조용히 물을 주는 끈기</p>
+                        </div>
+                    </button>
+                </div>
+
+                <!-- 오른편 상세 시너지 카드 (7/12) -->
+                <div class="lg:col-span-7 flex">
+                    <div id="decoder-screen" class="w-full bg-cream-card rounded-2xl border border-cream-border p-8 md:p-10 flex flex-col justify-between shadow-md relative transition-opacity duration-300">
+                        <div class="space-y-6">
+                            <div class="flex justify-between items-center">
+                                <span id="synergy-tag" class="text-xs font-semibold px-3 py-1 bg-terracotta/10 text-terracotta rounded-full">🎵 팀워크 시너지</span>
+                                <span class="text-xs text-charcoal-muted">Decoding #01</span>
+                            </div>
+                            
+                            <h3 id="synergy-title" class="text-2xl font-headline text-charcoal leading-tight">아카펠라: 남의 소리를 들어야 내 목소리도 살아난다</h3>
+                            
+                            <p id="synergy-desc" class="text-charcoal-light leading-relaxed font-light text-sm md:text-base">
+                                아카펠라는 단 한 명의 솔로를 위해 노래하는 것이 아닙니다. 동료들의 음정과 박자를 정밀하게 듣고, 나의 톤을 조정하여 완벽한 화음을 이루는 협동의 정수입니다. 이를 통해 저는 **"동료들의 아이디어를 경청하고, 어떻게 내 작업과 부드럽게 융합할지 설계하는 액티브 리스닝 능력"**을 완전히 습득했습니다.
+                            </p>
+                        </div>
+
+                        <!-- 시너지 핵심 요약 플로팅 바 -->
+                        <div class="mt-8 pt-6 border-t border-cream-border flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                            <div>
+                                <p class="text-xs text-charcoal-muted">프로젝트 시너지 파워</p>
+                                <p id="synergy-stat" class="text-base font-bold text-terracotta font-sub-headline">👂 액티브 리스닝 & 인터페이스 통합 역량</p>
+                            </div>
+                            <div class="px-4 py-2 bg-lavender/10 text-lavender-dark font-semibold text-xs rounded-lg">
+                                시너지 지수 99%
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 귀여운 TMI 보너스 가든 -->
+            <div class="mt-12 bg-cream-card border border-cream-border p-6 rounded-2xl shadow-sm flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="flex items-center gap-4">
+                    <div class="text-3xl">🤫</div>
+                    <div>
+                        <h4 class="font-sub-headline text-sm text-charcoal">궁금하지 않으실까 봐 준비한 깨알 TMI</h4>
+                        <p class="text-xs text-charcoal-muted">아현에 대해 조금 더 디테일하게 알아보세요.</p>
+                    </div>
+                </div>
+                <div class="flex flex-wrap gap-3">
+                    <div class="group relative px-4 py-2 bg-cream border border-cream-border rounded-xl text-xs text-charcoal-light cursor-pointer hover:bg-terracotta-transparent hover:text-terracotta hover:border-terracotta/30 transition-all">
+                        ❄️ 추위를 매우 탑니다!
+                        <span class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-1.5 bg-charcoal text-white text-[10px] rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap shadow-md pointer-events-none">부트캠프 에어컨 밑에선 늘 따뜻한 차와 후드가 필수..</span>
+                    </div>
+                    <div class="group relative px-4 py-2 bg-cream border border-cream-border rounded-xl text-xs text-charcoal-light cursor-pointer hover:bg-lavender-transparent hover:text-lavender-dark hover:border-lavender/30 transition-all">
+                        🍣 해산물 무한 사랑!
+                        <span class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-1.5 bg-charcoal text-white text-[10px] rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap shadow-md pointer-events-none">간장게장 러버! 짭조름한 밥도둑 게장만 있으면 언제 어디서든 멘탈 쾌속 회복!</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 기술 스택 섹션 -->
+    <section id="tech" class="py-20">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="text-center space-y-3 mb-16">
+                <span class="text-xs tracking-wider uppercase font-bold text-lavender-dark">Our Current Focus</span>
+                <h2 class="text-3xl font-headline text-charcoal">요즘 아현이 집중적으로 파고드는 것들</h2>
+                <div class="w-12 h-1 bg-lavender-dark mx-auto rounded-full"></div>
+            </div>
+
+            <!-- 기술 및 관심 스택 레이아웃 -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- 개발 기초 체력 -->
+                <div class="bg-cream-card rounded-2xl border border-cream-border p-8 space-y-6">
+                    <h3 class="text-lg font-headline text-charcoal flex items-center gap-2">
+                        <i data-lucide="code-2" class="w-5 h-5 text-terracotta"></i> 뼈대를 만드는 기술 스택
+                    </h3>
+                    
+                    <div class="space-y-4">
+                        <!-- 기술 1 -->
+                        <div>
+                            <div class="flex justify-between text-xs font-semibold text-charcoal-light mb-1">
+                                <span>GitHub (버전 관리 및 협업 기록)</span>
+                                <span class="text-terracotta">학습 몰입도 80%</span>
+                            </div>
+                            <div class="w-full bg-cream h-2 rounded-full overflow-hidden">
+                                <div class="bg-terracotta h-full rounded-full" style="width: 80%"></div>
+                            </div>
+                        </div>
+
+                        <!-- 기술 2 -->
+                        <div>
+                            <div class="flex justify-between text-xs font-semibold text-charcoal-light mb-1">
+                                <span>Python (데이터 분석 및 자동화)</span>
+                                <span class="text-terracotta">학습 몰입도 75%</span>
+                            </div>
+                            <div class="w-full bg-cream h-2 rounded-full overflow-hidden">
+                                <div class="bg-terracotta h-full rounded-full" style="width: 75%"></div>
+                            </div>
+                        </div>
+
+                        <!-- 기술 3 -->
+                        <div>
+                            <div class="flex justify-between text-xs font-semibold text-charcoal-light mb-1">
+                                <span>AI 활용 (프롬프트 및 생산성 툴 활용)</span>
+                                <span class="text-terracotta">학습 몰입도 85%</span>
+                            </div>
+                            <div class="w-full bg-cream h-2 rounded-full overflow-hidden">
+                                <div class="bg-terracotta h-full rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-xs text-charcoal-muted leading-relaxed pt-2">
+                        배움에 머무르지 않고 GitHub에 꾸준히 잔디를 심으며 코드 기록을 쌓고 있습니다. 특히 Python을 이용한 데이터 수집 및 정제, 최신 AI 툴을 프로젝트에 유기적으로 도입하는 효율적인 탐구에 푹 빠져 있습니다.
+                    </p>
+                </div>
+
+                <!-- 협업 시너지 도구 -->
+                <div class="bg-cream-card rounded-2xl border border-cream-border p-8 space-y-6">
+                    <h3 class="text-lg font-headline text-charcoal flex items-center gap-2">
+                        <i data-lucide="git-branch" class="w-5 h-5 text-lavender-dark"></i> 소통과 협업의 디바이스
+                    </h3>
+                    
+                    <div class="space-y-4">
+                        <!-- 도구 1 -->
+                        <div>
+                            <div class="flex justify-between text-xs font-semibold text-charcoal-light mb-1">
+                                <span>Git (명령어 및 형상 관리)</span>
+                                <span class="text-lavender-dark">숙련도 20%</span>
+                            </div>
+                            <div class="w-full bg-cream h-2 rounded-full overflow-hidden">
+                                <div class="bg-lavender h-full rounded-full" style="width: 20%"></div>
+                            </div>
+                        </div>
+
+                        <!-- 도구 2 -->
+                        <div>
+                            <div class="flex justify-between text-xs font-semibold text-charcoal-light mb-1">
+                                <span>Figma & 디자인 시스템 이해</span>
+                                <span class="text-lavender-dark">숙련도 75%</span>
+                            </div>
+                            <div class="w-full bg-cream h-2 rounded-full overflow-hidden">
+                                <div class="bg-lavender h-full rounded-full" style="width: 75%"></div>
+                            </div>
+                        </div>
+
+                        <!-- 도구 3 -->
+                        <div>
+                            <div class="flex justify-between text-xs font-semibold text-charcoal-light mb-1">
+                                <span>Slack / Notion / Discord (애자일 협업)</span>
+                                <span class="text-lavender-dark">숙련도 85%</span>
+                            </div>
+                            <div class="w-full bg-cream h-2 rounded-full overflow-hidden">
+                                <div class="bg-lavender h-full rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-xs text-charcoal-muted leading-relaxed pt-2">
+                        다채로운 동아리 운영진 경험으로 다듬어진 툴 사용법을 바탕으로, 팀의 기록과 소통 흐름을 깔끔하게 유지관리하는 완벽한 피스 메이커 역할을 자처합니다.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA 및 로컬 방명록 섹션 -->
+    <section id="cta" class="py-20 bg-cream border-t border-cream-border">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
+                <!-- 제안 구역 (5/12) -->
+                <div class="md:col-span-5 space-y-6">
+                    <span class="text-xs tracking-wider uppercase font-bold text-terracotta">Let's Team Up</span>
+                    <h2 class="text-3xl font-headline text-charcoal leading-tight">우리 같이 프로젝트 하실래요?</h2>
+                    <p class="text-sm text-charcoal-light leading-relaxed font-light">
+                        "이아현의 에너지를 우리 팀에 들이고 싶다!" 혹은 "오늘 배운 내용 같이 코드리뷰 해볼래?" 하시는 부트캠프 동료들 모두 환영합니다.
+                    </p>
+                    <div class="space-y-3 text-sm text-charcoal-light">
+                        <div class="flex items-center gap-3">
+                            <i data-lucide="mail" class="w-4 h-4 text-terracotta"></i> <span>stact813270@gmail.com</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i data-lucide="map-pin" class="w-4 h-4 text-terracotta"></i> <span>멀티캠퍼스 역삼 201호 왼쪽 뒷자리</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 가상 방명록 영역 (7/12) -->
+                <div class="md:col-span-7 bg-cream-card rounded-2xl border border-cream-border p-6 shadow-sm space-y-6">
+                    <h3 class="text-lg font-sub-headline text-charcoal flex items-center gap-2">
+                        <i data-lucide="messages-square" class="w-5 h-5 text-lavender-dark"></i> 동료들의 따뜻한 노크 보드
+                    </h3>
+                    
+                    <!-- 커피챗 작성 폼 -->
+                    <form id="message-form" class="space-y-3" onsubmit="addMessage(event)">
+                        <div class="grid grid-cols-2 gap-3">
+                            <input type="text" id="sender-name" placeholder="닉네임/이름" required class="w-full text-xs p-3 bg-cream border border-cream-border rounded-xl text-charcoal focus:outline-none focus:border-terracotta transition-colors">
+                            <select id="invitation-type" class="text-xs p-3 bg-cream border border-cream-border rounded-xl text-charcoal focus:outline-none focus:border-terracotta transition-colors">
+                                <option value="☕ 커피 한 잔">☕ 가벼운 커피챗</option>
+                                <option value="🚀 팀 합류 제안">🚀 프로젝트 팀 빌딩</option>
+                                <option value="🔥 스터디 제의">🔥 열공 스터디 제의</option>
+                                <option value="🌱 단순 응원">🌱 따뜻한 응원 한마디</option>
+                            </select>
+                        </div>
+                        <textarea id="sender-content" placeholder="함께 성장하고 싶은 이야기를 적어보세요! (로컬 브라우저 저장)" required rows="3" class="w-full text-xs p-3 bg-cream border border-cream-border rounded-xl text-charcoal focus:outline-none focus:border-terracotta transition-colors"></textarea>
+                        <button type="submit" class="w-full py-2.5 bg-terracotta text-white rounded-xl text-xs font-semibold hover:bg-terracotta-dark transition-all shadow-md shadow-terracotta-transparent flex items-center justify-center gap-2">
+                            <i data-lucide="send" class="w-4 h-4"></i> 메시지 남기기
+                        </button>
+                    </form>
+
+                    <!-- 메시지 보드 리스트 -->
+                    <div class="space-y-3 max-h-56 overflow-y-auto pr-1" id="message-list">
+                        <!-- 동적으로 로컬스토리지 메시지 노출 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 푸터 -->
+    <footer class="bg-charcoal text-cream py-12 border-t border-cream-border/10">
+        <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6 text-center md:text-left">
+            <div>
+                <p class="font-headline text-lg text-terracotta-light">이아현의 아뜰리에</p>
+                <p class="text-xs text-charcoal-muted mt-2">© 2026 Lee Ah-hyun. Designed with Terracotta & Cozy energy.</p>
+            </div>
+            <div class="flex gap-4">
+                <a href="#" class="p-2 bg-charcoal-light hover:bg-terracotta rounded-xl transition-all text-white">
+                    <i data-lucide="github" class="w-5 h-5"></i>
+                </a>
+                <a href="#" class="p-2 bg-charcoal-light hover:bg-terracotta rounded-xl transition-all text-white">
+                    <i data-lucide="instagram" class="w-5 h-5"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Lucide 아이콘 초기화
+        lucide.createIcons();
+
+        // 1. 시너지 디코더 제어 로직 데이터 
+        const synergyData = {
+            acappella: {
+                title: "아카펠라: 남의 소리를 들어야 내 목소리도 살아난다",
+                desc: "아카펠라는 한 명의 독무대가 아닙니다. 동료의 음정과 호흡을 귀담아듣고, 내 목소리의 톤과 볼륨을 완벽히 낮추며 조화롭게 스며들어야 비로소 멋진 하모니가 완성됩니다. 저는 이를 통해 개발 중 동료 개발자의 코드 맥락을 꼼꼼히 경청하고 존중하며, 인터페이스 설계를 하나로 매끄럽게 통합하는 액티브 리스닝 역량을 확실하게 습득했습니다.",
+                stat: "👂 경청과 원활한 인터페이스 통합 역량",
+                tag: "🎵 팀워크 시너지",
+                num: "01"
+            },
+            band: {
+                title: "밴드: 서로 다른 파트의 템포를 맞추는 지휘력",
+                desc: "기타, 드럼, 베이스 등 서로 개성이 뚜렷한 세션들이 정해진 비트(Tempo) 속에서 한 치의 오차도 없이 협력하는 과정입니다. 팀 프로젝트 역시 개발, 디자인, 기획이라는 서로 다른 파트가 마일스톤에 맞춰 일정을 준수하고 유기적으로 완급을 조절해야 합니다. 저는 밴드 활동에서 익힌 싱크로나이징 능력을 바탕으로 팀의 개발 속도를 안정적으로 조율해 낼 수 있습니다.",
+                stat: "⏱️ 일정 마일스톤 동기화 및 템포 조율 역량",
+                tag: "🎸 오케스트레이션",
+                num: "02"
+            },
+            theater: {
+                title: "연극: 다른 배역의 감정에 완전히 이입하는 능력",
+                desc: "나의 자아를 내려놓고 상대 인물의 삶과 가치관을 깊게 공감하지 못하면 연극 무대 위에서 대사 처리가 망가집니다. 마찬가지로, 탁월한 IT 결과물은 사용자의 가치관에 철저히 감정 이입하는 것에서 시작됩니다. 인류학적 공감과 연극 무대에서 다져진 '깊은 페르소나 설계 능력'으로 사용자가 가장 편리해할 최선의 UI 디테일을 제시하겠습니다.",
+                stat: "🎭 뛰어난 사용자 감정 이입 및 UI 페르소나 매칭",
+                tag: "🎨 공감의 눈",
+                num: "03"
+            },
+            dance: {
+                title: "댄스 & 클라이밍: 정적인 자세 뒤에 숨겨진 끈기",
+                desc: "겉보기엔 유연해 보이지만, 실제로는 고강도의 근력과 지탱하는 내공이 없으면 완성도 높은 동작이나 클라이밍 홀드를 극복할 수 없습니다. 화려한 외관의 웹사이트 이면에도 보이지 않는 백엔드 구조와 클린 코드를 위한 끈기 있는 최적화 작업이 수반됩니다. 새로운 춤과 난이도를 정복하는 무서운 러닝 커브와 강인한 체력으로 다져진 몰입력을 발휘하겠습니다.",
+                stat: "🧗‍♀️ 한계를 정복하는 집요한 문제 해결 끈기",
+                tag: "⚡ 집요한 탐구",
+                num: "04"
+            },
+            plants: {
+                title: "가드닝: 조용히 지켜보고 지속적으로 물을 주는 꾸준함",
+                desc: "조급한 마음에 물을 과하게 주면 식물의 뿌리가 썩어 버리듯, 개발에도 지속적인 회고와 차분한 예외 처리가 필요합니다. 아침에 일어나 가장 먼저 화분을 살피고 돌보며 조용한 치유를 가꾸는 성향은, 복잡하게 어질러진 코드베이스를 차분하게 마이그레이션하고 세심하게 디버깅 및 리팩토링하는 데 최적화된 든든한 가드너의 힘을 보장합니다.",
+                stat: "🪴 세심한 리팩토링 및 끈기 있는 장기 유지 보수",
+                tag: "🌱 신뢰의 지속",
+                num: "05"
+            }
+        };
+
+        // 시너지 디코딩 이벤트
+        function decodeSynergy(key, element) {
+            // 모든 버튼 비활성화 상태 전환
+            document.querySelectorAll('.synergy-btn').forEach(btn => {
+                btn.classList.remove('active-synergy-btn', 'border-cream-border');
+                btn.classList.add('border-transparent');
+            });
+
+            // 선택된 버튼 하이라이트 스타일 변경
+            element.classList.add('active-synergy-btn', 'border-cream-border');
+            element.classList.remove('border-transparent');
+
+            const screen = document.getElementById('decoder-screen');
+            screen.style.opacity = '0'; // 애니메이션 페이드아웃
+
+            setTimeout(() => {
+                const data = synergyData[key];
+                document.getElementById('synergy-tag').innerText = data.tag;
+                document.getElementById('synergy-title').innerText = data.title;
+                document.getElementById('synergy-desc').innerText = data.desc;
+                document.getElementById('synergy-stat').innerText = data.stat;
+                screen.querySelector('.text-charcoal-muted').innerText = `Decoding #${data.num}`;
+                screen.style.opacity = '1'; // 페이드인
+            }, 200);
+        }
+
+        // 2. 가상 커피챗 보드 (로컬 스토리지 방명록 저장 및 출력)
+        const DEFAULT_MESSAGES = [
+            { id: 1, name: "부트캠프 메이트", type: "🔥 스터디 제의", content: "아현님! 프론트엔드 파트 동료들 모아서 스터디 만드는데 같이 해요! 동아리 4개 하신 열정이면 진짜 든든할 것 같아서요.", date: "방금 전" },
+            { id: 2, name: "강의실 뒷자리 주니어", type: "☕ 커피 한 잔", content: "문화인류학 전공하셨다니 되게 이색적이세요. 포트폴리오 기획서 봤는데, 저랑 성격도 잘 맞으실 것 같아서 점심시간에 아메리카노 한 잔 하며 프로젝트 수다 어떠신가요?", date: "어제" }
+        ];
+
+        function loadMessages() {
+            const list = document.getElementById('message-list');
+            list.innerHTML = '';
+            
+            let stored = JSON.parse(localStorage.getItem('ahhyun_messages'));
+            if (!stored) {
+                stored = DEFAULT_MESSAGES;
+                localStorage.setItem('ahhyun_messages', JSON.stringify(stored));
+            }
+
+            stored.forEach(msg => {
+                let badgeColor = "bg-terracotta/10 text-terracotta";
+                if (msg.type.includes("팀")) badgeColor = "bg-blue-100 text-blue-700";
+                if (msg.type.includes("스터디")) badgeColor = "bg-purple-100 text-purple-700";
+                if (msg.type.includes("응원")) badgeColor = "bg-green-100 text-green-700";
+
+                const card = document.createElement('div');
+                card.className = 'p-3.5 bg-cream rounded-xl border border-cream-border text-xs flex flex-col gap-1.5 hover:shadow-inner transition-all';
+                card.innerHTML = `
+                    <div class="flex justify-between items-center">
+                        <div class="flex items-center gap-2">
+                            <span class="font-bold text-charcoal">${escapeHtml(msg.name)}</span>
+                            <span class="px-2 py-0.5 rounded text-[10px] font-semibold ${badgeColor}">${msg.type}</span>
+                        </div>
+                        <span class="text-[10px] text-charcoal-muted">${msg.date}</span>
+                    </div>
+                    <p class="text-charcoal-light leading-relaxed font-light">${escapeHtml(msg.content)}</p>
+                `;
+                list.appendChild(card);
+            });
+        }
+
+        function addMessage(event) {
+            event.preventDefault();
+            const nameInput = document.getElementById('sender-name');
+            const typeSelect = document.getElementById('invitation-type');
+            const contentInput = document.getElementById('sender-content');
+
+            const name = nameInput.value.trim();
+            const type = typeSelect.value;
+            const content = contentInput.value.trim();
+
+            if (!name || !content) return;
+
+            let stored = JSON.parse(localStorage.getItem('ahhyun_messages')) || DEFAULT_MESSAGES;
+            const newMsg = {
+                id: Date.now(),
+                name,
+                type,
+                content,
+                date: "방금 전"
+            };
+
+            stored.unshift(newMsg);
+            localStorage.setItem('ahhyun_messages', JSON.stringify(stored));
+
+            // 입력 필드 클리어
+            nameInput.value = '';
+            contentInput.value = '';
+
+            loadMessages();
+        }
+
+        function escapeHtml(text) {
+            return text
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#039;");
+        }
+
+        // 초기 실행 로드
+        window.onload = function() {
+            loadMessages();
+        }
+    </script>
+
+    <!-- 인터랙티브 버튼 활성화 스타일 정의 -->
+    <style>
+        .active-synergy-btn {
+            background-color: #FFFFFF !important;
+            box-shadow: 0 4px 12px rgba(212, 91, 52, 0.08);
+            border-color: #D45B34 !important;
+        }
+    </style>
+</body>
+</html>
